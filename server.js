@@ -21,7 +21,7 @@ app.use('/api', taskRoutes);
 //i removed mongodb connection url from here and placed in .env to keep it secret
 require('dotenv').config(); // Make sure this is at the top of your file
 const mongoURI = process.env.MONGO_URI;
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch((err) => console.log('MongoDB connection error:', err));
 
