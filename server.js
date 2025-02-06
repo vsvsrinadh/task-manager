@@ -1,10 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const taskRoutes = require('./routes/taskRoutes'); 
-
+const taskRoutes = require('./routes/taskRoutes');
+const cors = require('cors'); // Add this line
 
 const app = express();
+
+// Middleware to allow all origins
+app.use(cors()); // Add this line
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
